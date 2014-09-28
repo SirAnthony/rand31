@@ -1,0 +1,25 @@
+{
+  "name": "rand31",
+  "main": "rand31.js",
+  "version": "1.0.0",
+  "homepage": "https://github.com/SirAnthony/rand31",
+  "authors": [
+    "Sir Anthony <anthony@adsorbtion.org>"
+  ],
+  "description": "Park-Miller Pseudo-Random Number Generator",
+  "moduleType": [
+    "amd"
+  ],
+  "keywords": [
+    "random",
+    "Park-Miller"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
