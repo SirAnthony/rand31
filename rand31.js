@@ -21,7 +21,7 @@ var R = Random.prototype;
  * If zero is used, then the seed will be set to 1. */
 R.seed = function(seed){
     seed = seed||1;
-    this._seed = seed|0;
+    this._seed = seed;
 };
 /* Return next pseudo-random value as
  * a integer in specified range. */
@@ -32,7 +32,7 @@ R.nextInt = function(min, max){
         return this.nextrand();
     min -= 0.4999;
     max += 0.4999;
-    return Math.round(min+(max-min)*this.nextDouble())|0;
+    return Math.round(min+(max-min)*this.nextDouble());
 };
 /* Return next pseudo-random value as
  * a floating point value in specified range. */
@@ -45,9 +45,9 @@ R.nextrand = function(){
     // integer version 1, for max int 2^46 - 1 or larger.
     return this._seed = (this._seed * CONSTA) % CONSTM;
     // Original
-    // var hi = (CONSTA * (this._seed >> 16))|0;
-    // var lo = (CONSTA * (this._seed & 0xFFFF)+((hi & 0x7FFF) << 16)+(hi >> 15))|0;
-    // return this._seed = (lo > 0x7FFFFFFF ? lo - 0x7FFFFFFF : lo)|0;
+    // var hi = (CONSTA * (this._seed >> 16));
+    // var lo = (CONSTA * (this._seed & 0xFFFF)+((hi & 0x7FFF) << 16)+(hi >> 15));
+    // return this._seed = (lo > 0x7FFFFFFF ? lo - 0x7FFFFFFF : lo);
 };
 
 return Random;
