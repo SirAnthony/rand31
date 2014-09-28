@@ -1,0 +1,29 @@
+{
+  "name": "rand31",
+  "version": "1.0.0",
+  "description": "Park-Miller Pseudo-Random Number Generator",
+  "main": "rand31.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/SirAnthony/rand31.git"
+  },
+  "keywords": [
+    "random",
+    "Park-Miller"
+  ],
+  "author": "SirAnthony",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/SirAnthony/rand31/issues"
+  },
+  "homepage": "https://github.com/SirAnthony/rand31",
+  "devDependencies": {
+    "mocha": "^1.21.4"
+  }
+}
