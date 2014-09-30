@@ -8,7 +8,7 @@ if (typeof module === 'object' && typeof define !== 'function')
     var define = function(f){ module.exports = f(); };
 
 define(function(){
-'use strict'
+'use strict';
 
 var CONSTA = 16807;
 var CONSTM = 2147483647.0;
@@ -37,7 +37,7 @@ R.nextInt = function(min, max){
 /* Return next pseudo-random value as
  * a floating point value in specified range. */
 R.nextDouble = function(min, max){
-    if (!max)
+    if (max === undefined)
         max = min||1.0, min = 0.0;
     return min + ((max-min)*(this.next()/CONSTM));
 };
