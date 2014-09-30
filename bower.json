@@ -1,7 +1,7 @@
 {
   "name": "rand31",
   "main": "rand31.js",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "homepage": "https://github.com/SirAnthony/rand31",
   "authors": [
     "Sir Anthony <anthony@adsorbtion.org>"
