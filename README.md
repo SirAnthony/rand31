@@ -17,7 +17,7 @@ Methods
 
 _rand31.**seed**(value)_ - Setup new seed for generator. <br />
 
-_rand31.**nextrand**()_ - Get next random number.<br />
+_rand31.**next**()_ - Get next random number.<br />
 _rand31.**nextInt**(min, max)_ - Get next random rounded number.<br />
 _rand31.**nextDouble**(min, max)_ - Get next random float number.<br />
 

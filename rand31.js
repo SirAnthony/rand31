@@ -26,10 +26,10 @@ R.seed = function(seed){
 /* Return next pseudo-random value as
  * a integer in specified range. */
 R.nextInt = function(min, max){
-    if (!max)
+    if (max === undefined)
         max = min, min = 0;
-    if (!min && !max)
-        return this.nextrand();
+    if (max === undefined)
+        return this.next();
     min -= 0.4999;
     max += 0.4999;
     return Math.round(min+(max-min)*this.nextDouble());
@@ -39,15 +39,15 @@ R.nextInt = function(min, max){
 R.nextDouble = function(min, max){
     if (!max)
         max = min||1.0, min = 0.0;
-    return min + ((max-min)*(this.nextrand()/CONSTM));
+    return min + ((max-min)*(this.next()/CONSTM));
 };
-R.nextrand = function(){
+R.next = function(){
     // integer version 1, for max int 2^46 - 1 or larger.
-    return this._seed = (this._seed * CONSTA) % CONSTM;
-    // Original
-    // var hi = (CONSTA * (this._seed >> 16));
-    // var lo = (CONSTA * (this._seed & 0xFFFF)+((hi & 0x7FFF) << 16)+(hi >> 15));
-    // return this._seed = (lo > 0x7FFFFFFF ? lo - 0x7FFFFFFF : lo);
+    //return this._seed = (this._seed * CONSTA) % CONSTM;
+    // Original, faster
+    var hi = (CONSTA * (this._seed >> 16));
+    var lo = (CONSTA * (this._seed & 0xFFFF)+((hi & 0x7FFF) << 16)+(hi >> 15));
+    return this._seed = (lo > 0x7FFFFFFF ? lo - 0x7FFFFFFF : lo);
 };
 
 return Random;
